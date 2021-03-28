@@ -103,10 +103,10 @@ public class Analizator {
                 if (cashChar == 'N') {
                     cashChar = c;
                 } else {
-                    if (Lexems.OPERATION.getValue().contains("" + c + cashChar)) {
-                        answ.add(new Pair<>(Lexems.OPERATION.getName(), "" + c + cashChar));
+                    if (Lexems.OPERATION.getValue().contains("" + cashChar + c)) {
+                        answ.add(new Pair<>(Lexems.OPERATION.getName(), "" + cashChar + c));
                     }
-                    answ.add(new Pair<>("invalid lexeme", "" + c + cashChar));
+                    answ.add(new Pair<>("invalid lexeme", "" + cashChar + c));
                     cashChar = 'N';
                 }
             }

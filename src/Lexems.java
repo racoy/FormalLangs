@@ -10,7 +10,6 @@ public enum Lexems {
     SPECIAL("special"),
     WHITESPACE("whitespace");
 
-    //BOOL("bool", 1, "q0", "q4", new HashMap<String, Set<String>>().put().put(), );
 
     private final String name;
     private Set<String> value;
