@@ -5,11 +5,14 @@ public enum Lexems {
 
     BOOL("bool"),
     DATATYPE("datatype"),
-    KEYWORD("keyword");
+    KEYWORD("keyword"),
+    OPERATION("operation"),
+    SPECIAL("special"),
+    WHITESPACE("whitespace");
 
     //BOOL("bool", 1, "q0", "q4", new HashMap<String, Set<String>>().put().put(), );
 
-    private String name;
+    private final String name;
     private Set<String> value;
 
     public Set<String> getValue() {
@@ -24,13 +27,13 @@ public enum Lexems {
     Lexems(String name) {
         this.name = name;
         if (name.equals("bool")) {
-            value = new HashSet<String>();
+            value = new HashSet<>();
             value.add("true");
             value.add("false");
         }
 
         if (name.equals("datatype")) {
-            value = new HashSet<String>();
+            value = new HashSet<>();
             value.add("boolean");
             value.add("byte");
             value.add("short");
@@ -42,7 +45,7 @@ public enum Lexems {
         }
 
         if (name.equals("keyword")) {
-            value = new HashSet<String>();
+            value = new HashSet<>();
             value.add("begin");
             value.add("else");
             value.add("end");
@@ -55,5 +58,52 @@ public enum Lexems {
             value.add("break");
         }
 
+        if (name.equals("operation")) {
+            value = new HashSet<>();
+            value.add("+");
+            value.add("+=");
+            value.add("-");
+            value.add("-=");
+            value.add("*");
+            value.add("*=");
+            value.add("/");
+            value.add("/=");
+            value.add("%");
+            value.add("%=");
+            value.add("=");
+            value.add("==");
+            value.add("!=");
+            value.add("!");
+            value.add("&");
+            value.add("&&");
+            value.add("|");
+            value.add("||");
+            value.add(">");
+            value.add(">=");
+            value.add("<");
+            value.add("<=");
+        }
+
+        if (name.equals("special")) {
+            value = new HashSet<>();
+            value.add(".");
+            value.add(",");
+            value.add(":");
+            value.add(";");
+            value.add("?");
+            value.add("(");
+            value.add(")");
+            value.add("{");
+            value.add("}");
+            value.add("[");
+            value.add("]");
+        }
+
+        if (name.equals("whitespace")) {
+            value = new HashSet<>();
+            value.add(" ");
+            value.add("\n");
+            value.add("\t");
+        }
     }
 }

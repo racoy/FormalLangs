@@ -14,5 +14,6 @@ public class Main {
                 "  a = a / 15.0;\n" +
                 "}";
         Analizator.goAnalize(strCode).forEach(System.out::println);
+
     }
 }
